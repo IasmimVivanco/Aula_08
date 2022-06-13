@@ -67,6 +67,22 @@ String[] atualizarUmFilmePeloSeuIndice(int indiceDoFilme, string novoFilme)
 }
 
 
+// 1.6. Listar todos os filmes com seu índice/posição na lista.
+string listarTodosOsFilmesComSeuIndiceNaLista()
+{
+    string listaFilmes = string.Empty;
+
+    for (int i = 0; i < listaDeFilmes.Length; i++)
+    {
+        listaFilmes += i + " - " + listaDeFilmes[i] + "\n";
+    }
+
+    Console.WriteLine(listaFilmes);
+    return listaFilmes;
+}
+
+
+
 // Retorna Clube dos Cinco; A Hora do Pesadelo; Karatê Kid; Rocky IV; Conan, o Bárbaro; Highlander
 Console.WriteLine($"1. Lista de todos os filmes separados por ponto e vírgula:\n {apresentaTodosOsFilmesSeparadosPorPontoVirgula()}");
 Console.WriteLine("\n------------------------\n");
@@ -80,7 +96,9 @@ Console.WriteLine($"3. Buscar um filme pelo indice: \n {buscarNomeDoFilmePeloInd
 Console.WriteLine("\n------------------------\n");
 
 // Se o filme for Sexta-feira 13th, retorna Clube dos Cinco; A Hora do Pesadelo; Karatê Kid; Rocky IV; Conan, o Bárbaro; Highlander, Sexta-feira 13th
-Console.WriteLine("4. Adiciona um filme pelo nome", adicionaUmNovoFilmePeloSeuNome("Sexta-feira 13th"));
+Console.Write("4. Adiciona um filme pelo nome", adicionaUmNovoFilmePeloSeuNome("Sexta-feira 13th"));
+Console.WriteLine($"\n {apresentaTodosOsFilmesSeparadosPorPontoVirgula()}");
+Console.WriteLine("\n------------------------\n");
 
 // Se o índice for 3 e o nome for atualizado para Rocky III, retorna Clube dos Cinco; A Hora do Pesadelo; Karatê Kid; Rocky III; Conan, o Bárbaro; Highlander, Sexta-feira 13th
 Console.WriteLine($"5. Atualizar um filme pelo seu índice: \n {string.Join(("; "), atualizarUmFilmePeloSeuIndice(3, "Rock III"))}");
@@ -94,4 +112,6 @@ Console.WriteLine("\n------------------------\n");
 // 4 - Conan, o Bárbaro
 // 5 - Highlander
 // 6 - Sexta-feira 13th
-Console.WriteLine("6. Listar todos os filmes com seu indice/posicao na lista.", listarTodosOsFilmesComSeuIndiceNaLista());
+
+Console.WriteLine("6. Listar todos os filmes com seu indice/posicao na lista.");
+listarTodosOsFilmesComSeuIndiceNaLista();
